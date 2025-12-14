@@ -21,4 +21,23 @@ async function adicionarCliente(novoCliente) {
     const clienteAdicionado = await repositoryCliente.adicionarCliente(novoCliente);
     return clienteAdicionado;
 }
-export default {listarClientes, adicionarCliente, listarId};
+async function Login(email, senha)
+{
+    const cliente = await repositoryCliente.ListarByEmail(email);
+    if(cliente === null)
+        return [];
+    else{
+        if(await bcrypt.compare(senha, cliente.senha))
+        {
+            delete cliente.senha;
+            return cliente;
+        }
+        else{
+            return [];
+        }
+
+    
+    }
+}
+
+export default {listarClientes, adicionarCliente, listarId, Login};

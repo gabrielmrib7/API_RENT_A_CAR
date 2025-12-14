@@ -24,6 +24,14 @@ export class Cliente {
     return true;
   }
 
+  async hashSenha() {
+    this.senha = await bcrypt.hash(this.senha, 10);
+  }
+
+  async compararSenha(senhaTexto) {
+    return await bcrypt.compare(senhaTexto, this.senha);
+  }
+
   static fromDb(row) {
     if (!row) return null;
     return new Cliente(row);

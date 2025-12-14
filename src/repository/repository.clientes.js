@@ -17,4 +17,10 @@ async function adicionarCliente(novoCliente) {
     const novoClienteDb = await db('clientes').select('*').where({ id }).first();
     return Cliente.fromDb(novoClienteDb);
 }
-export default {listarClientes, adicionarCliente, listarId};
+
+async function ListarByEmail(email) {
+    const row =  await db('clientes').select('*').where({ email }).first();
+    return Cliente.fromDb(row);
+}
+
+export default {listarClientes, adicionarCliente, listarId, ListarByEmail};
