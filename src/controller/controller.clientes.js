@@ -10,7 +10,7 @@ async function listarClientes(req, res) {
         res.status(200).json(clientes);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error });
+        res.status(res.status).json({ error });
     }
 }
 

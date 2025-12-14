@@ -12,7 +12,6 @@ async function listarId(id) {
 
 async function adicionarCliente(novoCliente) {  
     const cliente = new Cliente(novoCliente);
-    cliente.validate();
     const [id] = await db('clientes').insert(cliente.toDb());
     const novoClienteDb = await db('clientes').select('*').where({ id }).first();
     return Cliente.fromDb(novoClienteDb);
