@@ -7,6 +7,12 @@ async function Listar() {
     return carros;
 }
 
+async function ListarId(id)
+{
+    const carros = await repositoryCarros.ListarId(id);
+    return carros;
+}
+
 async function Adicionar(novoCarro) {
     const carroAdicionado = await repositoryCarros.Adicionar(novoCarro);
     return carroAdicionado;
@@ -23,4 +29,4 @@ async function Atualizar(id, dadosAtualizados) {
     return carroAtualizado;
 }
 
-export default {Listar, Adicionar, Remover, Atualizar};
+export default {Listar, Adicionar, Remover, Atualizar, ListarId};
