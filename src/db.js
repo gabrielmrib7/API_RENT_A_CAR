@@ -1,12 +1,14 @@
-import knex from 'knex'
-import dotenv from 'dotenv'
+import knex from 'knex';
+import dotenv from 'dotenv';
 
-dotenv.config()
+dotenv.config();
 
 export const db = knex({
   client: 'pg',
   connection: {
     connectionString: process.env.POSTGRES_URL_NON_POOLING,
-    ssl: 'require' // ← PRODUÇÃO CORRETA
+    ssl: {
+      rejectUnauthorized: false
+    }
   }
-})
+});

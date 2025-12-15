@@ -1,13 +1,10 @@
 import express from "express";
-//import fs from "fs";
 import router from "./router.js";
-const app = express();
-const port = 3000;
+import serverless from "serverless-http";
 
+const app = express();
 
 app.use(express.json());
-app.use(router);
+app.use("/api", router); // suas rotas
 
- 
-
-  export default app;
+ export default app;

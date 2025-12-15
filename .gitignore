@@ -23,3 +23,4 @@ build/
 
 # Test/Coverage Reports
 coverage/
+.vercel
