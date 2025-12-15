@@ -8,6 +8,11 @@ import jwt from "./middleware/middleware.token.js";
 //Aqui definimos as rotas da aplicação e chamamos os controllers correspondentes
 const router = Router();
 
+router.get('/', (req, res) => {
+    res.status(200).json({ message: 'Bem-vindo à API Rent a Car!' });
+});
+
+
 router.get('/carros', jwt.ValidateJWT, controllerCarros.Listar);
 router.post('/carros', jwt.ValidateJWT, controllerCarros.Adicionar);
 router.delete('/carros/:id', jwt.ValidateJWT, controllerCarros.Remover);

@@ -7,8 +7,6 @@ export const db = knex({
   client: 'pg',
   connection: {
     connectionString: process.env.POSTGRES_URL_NON_POOLING,
-    ssl: {
-      rejectUnauthorized: false
-    }
+    ssl: true
   }
 });
