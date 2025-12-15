@@ -10,6 +10,4 @@ app.use(router);
 
  
 
-app.listen(port, () => {
-    console.log(`API RENT-A-CAR correndo na porta ${port}`);
-});
+  export default app;
