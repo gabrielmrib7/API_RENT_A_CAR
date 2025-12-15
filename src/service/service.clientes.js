@@ -19,7 +19,7 @@ async function listarId(id) {
 async function adicionarCliente(novoCliente) {
     const passwordHash = await bcrypt.hash(novoCliente.senha, 10);
     novoCliente.senha = passwordHash;
-    cliente = new Cliente(novoCliente);
+    const cliente = new Cliente(novoCliente);
         if(!cliente.validate())
             {
                 throw {status: 400, message: "Dados do cliente inválidos" };

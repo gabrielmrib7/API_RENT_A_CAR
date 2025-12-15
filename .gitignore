@@ -17,7 +17,8 @@ build/
 *.swp
 
 # Environment Variables (Sensitive Data)
-#.env
+.env
+.env.local
 #.env.*
 
 # Test/Coverage Reports

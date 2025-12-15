@@ -1,18 +1,12 @@
-//Criar uma conexão mysql com migrations
-import knex from 'knex';
-import dotenv from 'dotenv';
+import knex from 'knex'
+import dotenv from 'dotenv'
 
-//Aqui configuramos a conexão com o banco de dados usando as variáveis de ambiente
-
-dotenv.config();
+dotenv.config()
 
 export const db = knex({
-  client: 'mysql2',
+  client: 'pg',
   connection: {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
-  },
-});
+    connectionString: process.env.POSTGRES_URL_NON_POOLING,
+    ssl: 'require' // ← PRODUÇÃO CORRETA
+  }
+})

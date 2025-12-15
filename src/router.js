@@ -14,7 +14,7 @@ router.delete('/carros/:id', jwt.ValidateJWT, controllerCarros.Remover);
 router.put('/carros/:id', jwt.ValidateJWT,controllerCarros.Atualizar);
 
 router.get('/clientes', jwt.ValidateJWT, controllerClientes.listarClientes);
-router.post('/clientes', jwt.ValidateJWT, controllerClientes.adicionarCliente);
+router.post('/clientes', controllerClientes.adicionarCliente);
 router.post('/clientes/login', controllerClientes.Login);
 // router.delete('/clientes/:id', controllerClientes.removerCliente);
 // router.put('/clientes/:id', controllerClientes.atualizarCliente);

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "migrate:prod": "knex migrate:latest --env production"
+    
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "jsonwebtoken": "^9.0.3",
     "knex": "^3.1.0",
     "mysql2": "^3.15.3",
+    "pg": "^8.16.3",
     "sqlite": "^5.1.1",
     "sqlite3": "^5.1.7"
   },
